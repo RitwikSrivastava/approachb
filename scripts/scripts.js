@@ -72,6 +72,43 @@ function buildAutoBlocks() {
 }
 
 /**
+ * aem-assets-plugin, as published, only reads an anchor's `title` attribute for alt
+ * text, and it doesn't preserve Universal Editor instrumentation when it replaces the
+ * authored <a> with an optimized <picture>. Handle both here, wrapping the plugin's
+ * own decorateExternalImages, so this works with the plugin as published - without
+ * needing to carry a locally patched copy of it.
+ * @param {Element} main the main container element
+ */
+function decorateExternalImages(main) {
+  const prefixes = window.hlx.aemassets?.externalImageUrlPrefixes;
+  if (!window.hlx.aemassets?.decorateExternalImages || !prefixes) return;
+
+  const instrumentationByParent = new Map();
+  main.querySelectorAll('a[href]').forEach((a) => {
+    if (!prefixes.some(([prefix]) => a.href.startsWith(prefix))) return;
+
+    // Fall back to the link's own text as alt text when there's no title attribute,
+    // unless it's just the raw URL (e.g. a pasted link with no author-supplied text).
+    if (!a.getAttribute('title')) {
+      const text = a.textContent?.trim();
+      if (text && text !== a.href) a.title = text;
+    }
+
+    const attrs = [...a.attributes].filter(
+      ({ nodeName }) => nodeName.startsWith('data-aue-') || nodeName.startsWith('data-richtext-'),
+    );
+    if (attrs.length) instrumentationByParent.set(a.parentNode, attrs);
+  });
+
+  window.hlx.aemassets.decorateExternalImages(main);
+
+  instrumentationByParent.forEach((attrs, parent) => {
+    const img = parent.querySelector('picture img');
+    attrs.forEach(({ nodeName, nodeValue }) => img?.setAttribute(nodeName, nodeValue));
+  });
+}
+
+/**
  * Decorates formatted links to style them as buttons.
  * @param {HTMLElement} main The main container element
  */
@@ -116,9 +153,7 @@ export function decorateButtons(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  if (window.hlx.aemassets?.decorateExternalImages) {
-    window.hlx.aemassets.decorateExternalImages(main);
-  }
+  decorateExternalImages(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);

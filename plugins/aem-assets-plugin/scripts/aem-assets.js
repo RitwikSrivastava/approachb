@@ -106,12 +106,7 @@ function createWebOptimizedDMOpenAPIUrl(url) {
  */
 function getImageSrcUrlAndAlt(element) {
   if (element.tagName === 'A') {
-    const href = element.getAttribute('href');
-    const text = element.textContent?.trim() || '';
-    // Fall back to the link's own text as alt text, unless it's just the raw URL
-    // (e.g. a pasted link with no author-supplied text), since that's not usable alt text.
-    const textAlt = text && text !== href ? text : '';
-    return { url: href, alt: element.getAttribute('title') || textAlt };
+    return { url: element.getAttribute('href'), alt: element.getAttribute('title') || '' };
   }
 
   if (element.tagName === 'IMG') {
@@ -608,15 +603,6 @@ export function decorateExternalImages(ele) {
           }
         }
       });
-
-      // Preserve UE instrumentation so the replaced image stays editable in the UE canvas.
-      const extPictureImg = extPicture.querySelector('img');
-      [...extImage.attributes].forEach(({ nodeName, nodeValue }) => {
-        if (nodeName.startsWith('data-aue-') || nodeName.startsWith('data-richtext-')) {
-          extPictureImg?.setAttribute(nodeName, nodeValue);
-        }
-      });
-
       extImage.parentNode.replaceChild(extPicture, extImage);
     }
   });
@@ -664,7 +650,6 @@ export async function loadBlock(block) {
 // Create an object with the test functions
 const testFunctions = {
   appendQueryParams,
-  getImageSrcUrlAndAlt,
 };
 
 // Export the object
