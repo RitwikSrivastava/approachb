@@ -10,6 +10,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import assetsInit from './aem-assets-plugin-support.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -115,6 +116,9 @@ export function decorateButtons(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  if (window.hlx.aemassets?.decorateExternalImages) {
+    window.hlx.aemassets.decorateExternalImages(main);
+  }
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
@@ -182,4 +186,5 @@ async function loadPage() {
   loadDelayed();
 }
 
+await assetsInit();
 loadPage();

@@ -180,6 +180,37 @@
     ]
   },
   {
+    "id": "customdmimage",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageTitle",
+        "label": "Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Description"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -227,9 +258,9 @@
       },
       {
         "component": "text",
-        "name": "imageTitle",
-        "label": "Alt Text",
-        "valueType": "string"
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
       },
       {
         "component": "text",
