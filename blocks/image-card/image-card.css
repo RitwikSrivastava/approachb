@@ -1,0 +1,37 @@
+.image-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.image-card .image-card-image {
+  line-height: 0;
+}
+
+.image-card .image-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.image-card .image-card-title {
+  margin: 16px 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.image-card .image-card-title p {
+  margin: 0;
+}
+
+.image-card .image-card-body {
+  margin: 8px 16px 16px;
+}
+
+@media (width >= 900px) {
+  .image-card {
+    max-width: 480px;
+  }
+}

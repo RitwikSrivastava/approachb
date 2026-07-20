@@ -214,5 +214,36 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "image-card",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://main--approachb--ritwiksrivastava.aem.page/tools/assets-selector/image-card.config.json"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Description"
+      }
+    ]
   }
 ]

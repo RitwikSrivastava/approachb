@@ -1,0 +1,22 @@
+{
+  "repoNames": ["author-p66302-e574366"],
+  "aemTierType": ["delivery", "author"],
+  "rootPath": "/content/dam",
+  "alwaysUseDMDelivery": true,
+  "filterSchema": [
+    {
+      "header": "File Type",
+      "groupKey": "FileTypeGroup",
+      "fields": [
+        {
+          "name": "type",
+          "element": "checkbox",
+          "defaultValue": ["image/*"],
+          "options": [
+            { "label": "Image", "value": "image/*" }
+          ]
+        }
+      ]
+    }
+  ]
+}
