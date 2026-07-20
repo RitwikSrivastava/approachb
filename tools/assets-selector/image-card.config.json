@@ -1,5 +1,4 @@
 {
-  "repoNames": ["author-p66302-e574366"],
   "aemTierType": ["delivery", "author"],
   "rootPath": "/content/dam",
   "alwaysUseDMDelivery": true,
