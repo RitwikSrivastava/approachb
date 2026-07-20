@@ -27,7 +27,7 @@ export default function decorate(block) {
   const titleCell = getField(block, 'title', 1);
   const textCell = getField(block, 'text', 2);
 
-  if (imageCell) imageCell.className = 'customdmimage-image';
-  if (titleCell) titleCell.className = 'customdmimage-title';
-  if (textCell) textCell.className = 'customdmimage-body';
+  if (imageCell) imageCell.className = 'custom-dm-image-image';
+  if (titleCell) titleCell.className = 'custom-dm-image-title';
+  if (textCell) textCell.className = 'custom-dm-image-body';
 }

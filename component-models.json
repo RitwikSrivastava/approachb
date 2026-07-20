@@ -180,7 +180,7 @@
     ]
   },
   {
-    "id": "customdmimage",
+    "id": "custom-dm-image",
     "fields": [
       {
         "component": "custom-asset-namespace:custom-asset",
