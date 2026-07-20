@@ -223,7 +223,7 @@
         "valueType": "string",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://main--approachb--ritwiksrivastava.aem.page/tools/assets-selector/image-card.config.json"
+        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
       },
       {
         "component": "text",
