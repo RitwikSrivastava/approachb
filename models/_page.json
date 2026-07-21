@@ -21,6 +21,13 @@
           "name": "keywords",
           "multi": true,
           "label": "Keywords"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
         }
       ]
     }

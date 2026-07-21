@@ -20,6 +20,29 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
       }
     ]
   },
@@ -260,28 +283,5 @@
         "label": "Description"
       }
     ]
-  },
-  {
-    "id": "image",
-    "fields": [
-      {
-        "name": "image",
-        "component": "custom-asset-namespace:custom-asset",
-        "label": "Image",
-        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json",
-        "valueType": "string"
-      },
-      {
-        "name": "imageMimeType",
-        "component": "custom-asset-namespace:custom-asset-mimetype",
-        "valueType": "string"
-      },
-      {
-        "name": "imageAlt",
-        "label": "Alt Text",
-        "component": "text",
-        "valueType": "string"
-      }
-    ]
-}
+  }
 ]
