@@ -22,11 +22,11 @@
         "label": "Keywords"
       },
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "image",
         "label": "Image",
-        "multi": false
+        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
       }
     ]
   },
@@ -34,11 +34,10 @@
     "id": "image",
     "fields": [
       {
-        "component": "custom-asset-namespace:custom-asset",
-        "valueType": "string",
+        "component": "reference",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
+        "multi": false
       },
       {
         "component": "text",
