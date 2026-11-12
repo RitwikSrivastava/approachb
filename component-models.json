@@ -266,7 +266,7 @@
         "valueType": "string",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://author-p66302-e574366.adobeaemcloud.com/content/dam/approachb/config.json"
+        "configUrl": "https://image-config.tiiny.site/image-config.json"
       },
       {
         "component": "text",
