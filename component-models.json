@@ -266,7 +266,7 @@
         "valueType": "string",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://image-config.tiiny.site/image-config.json"
+        "configUrl": "https://main--approachb--ritwiksrivastava.aem.page/tools/assets-selector/image-card.config.json"
       },
       {
         "component": "text",
